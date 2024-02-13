@@ -1,7 +1,6 @@
 package org.computate.smartvillage.enus.vertx;
 
 import java.net.URLDecoder;
-import java.net.http.HttpResponse.BodyHandler;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,28 +11,27 @@ import java.util.Map.Entry;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
-
-import javax.lang.model.util.Elements.Origin;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.computate.search.tool.SearchTool;
-import org.computate.vertx.handlebars.AuthHelpers;
-import org.computate.vertx.handlebars.DateHelpers;
-import org.computate.vertx.handlebars.SiteHelpers;
-import org.computate.vertx.openapi.OpenApi3Generator;
-import org.computate.vertx.search.list.SearchList;
 import org.computate.smartvillage.enus.config.ConfigKeys;
-import org.computate.smartvillage.enus.model.htm.SiteHtmEnUSGenApiService;
 import org.computate.smartvillage.enus.model.page.SitePage;
-import org.computate.smartvillage.enus.model.page.SitePageEnUSGenApiService;
 import org.computate.smartvillage.enus.model.user.SiteUserEnUSGenApiService;
-import org.computate.smartvillage.enus.page.HomePage;
-import org.computate.smartvillage.enus.page.dynamic.DynamicPage;
-import org.computate.smartvillage.enus.request.SiteRequestEnUS;
 {% for JAVA_CLASS in JAVA_CLASSES %}
 import {{ JAVA_CLASS.classeNomCanonique_enUS_stored_string }}EnUSGenApiService;
 {% endfor %}
+import org.computate.smartvillage.enus.mqtt.MqttMessageReader;
+import org.computate.smartvillage.enus.page.HomePage;
+import org.computate.smartvillage.enus.page.dynamic.DynamicPage;
+import org.computate.smartvillage.enus.request.SiteRequestEnUS;
+import org.computate.vertx.handlebars.AuthHelpers;
+import org.computate.vertx.handlebars.DateHelpers;
+import org.computate.vertx.handlebars.SiteHelpers;
+import org.computate.vertx.openapi.ComputateOAuth2AuthHandlerImpl;
+import org.computate.vertx.openapi.OpenApi3Generator;
+import org.computate.vertx.search.list.SearchList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -52,6 +50,7 @@ import io.vertx.config.ConfigRetriever;
 import io.vertx.config.ConfigRetrieverOptions;
 import io.vertx.config.ConfigStoreOptions;
 import io.vertx.core.AbstractVerticle;
+import io.vertx.core.CompositeFuture;
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Future;
 import io.vertx.core.MultiMap;
@@ -73,26 +72,30 @@ import io.vertx.core.spi.cluster.ClusterManager;
 import io.vertx.core.spi.cluster.NodeInfo;
 import io.vertx.ext.auth.authorization.AuthorizationProvider;
 import io.vertx.ext.auth.oauth2.OAuth2Auth;
+import io.vertx.ext.auth.oauth2.OAuth2FlowType;
 import io.vertx.ext.auth.oauth2.OAuth2Options;
+import io.vertx.ext.auth.oauth2.Oauth2Credentials;
 import io.vertx.ext.auth.oauth2.authorization.KeycloakAuthorization;
 import io.vertx.ext.auth.oauth2.providers.OpenIDConnectAuth;
 import io.vertx.ext.bridge.PermittedOptions;
 import io.vertx.ext.healthchecks.HealthCheckHandler;
 import io.vertx.ext.healthchecks.Status;
-import io.vertx.ext.mail.MailClient;
-import io.vertx.ext.mail.MailConfig;
+import io.vertx.ext.web.Route;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.Session;
 import io.vertx.ext.web.api.service.ServiceRequest;
 import io.vertx.ext.web.client.WebClient;
 import io.vertx.ext.web.client.WebClientOptions;
+import io.vertx.ext.web.handler.BodyHandler;
 import io.vertx.ext.web.handler.OAuth2AuthHandler;
 import io.vertx.ext.web.handler.SessionHandler;
 import io.vertx.ext.web.handler.StaticHandler;
 import io.vertx.ext.web.handler.TemplateHandler;
+import io.vertx.ext.web.handler.impl.OAuth2AuthHandlerImpl;
 import io.vertx.ext.web.handler.sockjs.SockJSBridgeOptions;
 import io.vertx.ext.web.handler.sockjs.SockJSHandler;
+import io.vertx.ext.web.impl.Origin;
 import io.vertx.ext.web.openapi.RouterBuilder;
 import io.vertx.ext.web.sstore.LocalSessionStore;
 import io.vertx.ext.web.templ.handlebars.HandlebarsTemplateEngine;
@@ -104,7 +107,6 @@ import io.vertx.spi.cluster.zookeeper.ZookeeperClusterManager;
 import io.vertx.sqlclient.PoolOptions;
 import io.vertx.sqlclient.Tuple;
 import io.vertx.tracing.opentelemetry.OpenTelemetryOptions;
-{{ MAIN_VERTICLE_IMPORTS | default('') }}
 
 
 /**
