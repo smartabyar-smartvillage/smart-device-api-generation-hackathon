@@ -1,0 +1,120 @@
+---
+
+API_VERSION: {{ API_VERSION }}
+SITE_NAME: {{ SITE_NAME }}
+SITE_DISPLAY_NAME: {{ SITE_DISPLAY_NAME }}
+SITE_PUBLIC_URL: {{ SITE_PUBLIC_URL }}
+{% if MAILING_LIST_URL is defined %}
+MAILING_LIST_URL: {{ MAILING_LIST_URL }}
+{% endif %}
+SITE_HOST_NAME: localhost
+SITE_PORT: {{ SITE_PORT }}
+SITE_BASE_URL: "http://localhost:{{ SITE_PORT }}"
+SITE_ZONE: {{ SITE_ZONE }}
+SITE_LOCALE: {{ SITE_LOCALE }}
+SITE_INSTANCES: 5
+WORKER_POOL_SIZE: 2
+VERTX_MAX_EVENT_LOOP_EXECUTE_TIME: 30
+VERTX_MAX_WORKER_EXECUTE_TIME: 6000
+VERTX_WARNING_EXCEPTION_SECONDS: 60
+CLUSTER_HOST_NAME: localhost
+CLUSTER_PORT: {{ SITE_PORT | regex_replace('..$', '') }}81
+FACEBOOK_GRAPH_VERSION: v15.0
+FACEBOOK_APP_ID: 1871568493111919
+{% if GITHUB_ORG is defined %}
+GITHUB_ORG: "{{ GITHUB_ORG }}"
+{% endif %}
+{% if QUAYIO_ORG is defined %}
+QUAYIO_ORG: "{{ QUAYIO_ORG }}"
+{% endif %}
+{% if SITE_POWERED_BY_URL is defined %}
+SITE_POWERED_BY_URL: "{{ SITE_POWERED_BY_URL }}"
+{% endif %}
+{% if SITE_POWERED_BY_NAME is defined %}
+SITE_POWERED_BY_NAME: "{{ SITE_POWERED_BY_NAME }}"
+{% endif %}
+{% if SITE_POWERED_BY_IMAGE_URI is defined %}
+SITE_POWERED_BY_IMAGE_URI: "{{ SITE_POWERED_BY_IMAGE_URI }}"
+{% endif %}
+ENABLE_ZOOKEEPER_CLUSTER: true
+ENABLE_KAFKA: true
+
+STATIC_BASE_URL: "http://localhost:{{ SITE_PORT }}/static"
+STATIC_PATH: "/usr/local/src/{{ SITE_NAME }}-static"
+
+API_CONTACT_EMAIL: 
+{% if MIDDLE_API_COUNTER is defined %}{{ MIDDLE_API_COUNTER }}{% else %}API_COUNTER_RESUME: 0
+API_COUNTER_FETCH: 10
+API_COUNTER_FETCH_SitePage: 10
+API_COUNTER_FETCH_SiteHtm: 10
+{% endif %}{{ AFTER_API_COUNTER | default('') }}
+JDBC_HOST: localhost
+JDBC_PORT: 5432
+JDBC_DATABASE: {{ JDBC_DATABASE }}
+JDBC_USERNAME: {{ JDBC_USERNAME }}
+JDBC_PASSWORD: {{ JDBC_PASSWORD | default('password') }}
+JDBC_MAX_POOL_SIZE: 10
+JDBC_MAX_WAIT_QUEUE_SIZE: 1000
+
+AUTH_REALM: 
+AUTH_CLIENT: 
+AUTH_SECRET: 
+AUTH_HOST_NAME: 
+AUTH_PORT: 443
+AUTH_SSL: true
+AUTH_SSL_REQUIRED: all
+AUTH_TOKEN_URI: /auth/realms/AUTH_REALM/protocol/openid-connect/token
+AUTH_FINE_GRAINED_POLICY_PERMISSIONS: false
+SSL_VERIFY: true
+
+ZOOKEEPER_HOST_NAME: localhost
+ZOOKEEPER_PORT: 2181
+ZOOKEEPER_RETRY_POLICY: one_time
+ZOOKEEPER_BASE_SLEEP_TIME_MILLIS: 5000
+ZOOKEEPER_MAX_SLEEP_MILLIS: 5000
+ZOOKEEPER_MAX_RETRIES: 5
+ZOOKEEPER_CONNECTION_TIMEOUT_MILLIS: 3000
+ZOOKEEPER_SESSION_TIMEOUT_MILLIS: 5000
+
+SOLR_URL: https://solr-smartvillage.apps-crc.testing/solr/smartabyar-smartvillage
+SOLR_HOST_NAME: solr-smartvillage.apps-crc.testing
+SOLR_PORT: 443
+SOLR_COLLECTION: smartvillage
+SOLR_SSL: true
+SOLR_HOST_NAME_COMPUTATE: solr-solr.apps-crc.testing
+SOLR_PORT_COMPUTATE: 443
+SOLR_COLLECTION_COMPUTATE: computate
+SOLR_SSL_COMPUTATE: true
+SOLR_URL_COMPUTATE: "https://solr-solr.apps-crc.testing/solr/computate"
+SOLR_WORKER_COMMIT_WITHIN_MILLIS: 10000
+
+EMAIL_HOST: 
+EMAIL_PORT: 
+EMAIL_SSL: 
+EMAIL_AUTH: 
+EMAIL_USERNAME: 
+EMAIL_PASSWORD: 
+EMAIL_FROM: 
+EMAIL_ADMIN: 
+
+OPEN_TELEMETRY_ENABLED: false
+
+REFRESH_DATA_PAUSE_IN_SECONDS: 10
+ENABLE_REFRESH_DATA: false
+{% for JAVA_CLASS in JAVA_CLASSES %}
+ENABLE_REFRESH_DATA_{{ JAVA_CLASS.classeNomSimple_enUS_stored_string }}: true
+{% endfor %}
+
+ENABLE_IMPORT_DATA: true
+{% for JAVA_CLASS in JAVA_CLASSES %}
+ENABLE_IMPORT_DATA_{{ JAVA_CLASS.classeNomSimple_enUS_stored_string }}: true
+{% endfor %}
+
+# The Auth roles required to be an admin in the site. 
+AUTH_ROLE_ADMIN: 'SiteAdmin'
+# The Auth roles required to add and modify site user records. 
+AUTH_ROLE_REQUIRED_SiteUser: 'SiteAdmin'
+{% for JAVA_CLASS in JAVA_CLASSES %}
+# The Auth roles required to add and modify {{ JAVA_CLASS.classeNomSingulier_enUS_stored_string | default('') }} records. 
+AUTH_ROLE_REQUIRED_{{ JAVA_CLASS.classeNomSimple_enUS_stored_string }}: 'SiteAdmin'
+{% endfor %}{{ SITE_APPLICATION_YML_END | default('') }}

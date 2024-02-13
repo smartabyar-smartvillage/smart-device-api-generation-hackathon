@@ -1,0 +1,28 @@
+- name: Update application after code generation
+  hosts: localhost
+  connection: local
+  vars:
+    APPLICATION_PATH: ~/smartabyar-smartvillage/src/main/resources/application.yml
+    MAIN_VERTICLE_PATH: ~/smartabyar-smartvillage/src/main/java/org/computate/smartvillage/enus/vertx/MainVerticle.java
+    SITE_JAVA_PACKAGE: "org.computate.smartvillage.enus"
+  tasks:
+    - name: Load vars
+      ansible.builtin.include_vars: ~/smartabyar-smartvillage/config/smartabyar-smartvillage.yml
+    - name: Load vars
+      ansible.builtin.include_vars: "{{ APPLICATION_PATH }}"
+    - name: Query Apache Solr for all Java classes
+      uri: 
+        url: "{{ 'http://solr:8983/solr/computate/select?rows=300&q=*:*&fq=partEstClasse_indexed_boolean:true&fq=siteNom_indexed_string:smartabyar-smartvillage&fq=classeApiMethodes_enUS_indexed_strings:SearchPage&fq=-classeNomSimple_enUS_indexed_string:SiteUser&sort=classSort_indexed_int%20asc' }}"
+        validate_certs: false
+      register: JAVA_CLASSES_RESPONSE
+    - name: 
+      set_fact: 
+        JAVA_CLASSES: "{{ JAVA_CLASSES_RESPONSE.json.response.docs }}"
+    - name: "Update {{ APPLICATION_PATH }}"
+      copy:
+        content: "{{ lookup('template', 'templates/application.yml') | replace('\\{\\{\\{','{{{') | replace('\\{\\{\\>','{{>') | replace('\\{\\{\\#','{{#') | replace('\\{\\%','{%') | replace('\\{\\{','{{') | replace('\\}\\}\\}', '}}}') | replace('\\}\\}', '}}') | replace('\\%\\}', '%}') }}"
+        dest: "{{ APPLICATION_PATH }}"
+    - name: "Update {{ MAIN_VERTICLE_PATH }}"
+      copy:
+        content: "{{ lookup('template', 'templates/MainVerticle.java') | replace('\\{\\{\\{','{{{') | replace('\\{\\{\\>','{{>') | replace('\\{\\{\\#','{{#') | replace('\\{\\%','{%') | replace('\\{\\{','{{') | replace('\\}\\}\\}', '}}}') | replace('\\}\\}', '}}') | replace('\\%\\}', '%}') }}"
+        dest: "{{ MAIN_VERTICLE_PATH }}"
