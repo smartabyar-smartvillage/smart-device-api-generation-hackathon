@@ -301,7 +301,8 @@ developed with the same `computate` platform over many years include:
 - Thanks to the [Red Hat Social Innovation
 Program](https://www.redhat.com/en/about/social-innovation) for many
 opportunities since 2018 to develop and deploy multiple innovative sites and
-hackathons together with field experts in interesting domains like Ratial
+hackathons with the computate platform together with field experts in 
+interesting domains like Ratial
 Equity, Virus DNA Sequencing, Educational Software, Medical Imaging Software,
 and more. See my [Hackathons page on
 computate.org](https://www.computate.org/hackathons) for more information on the
