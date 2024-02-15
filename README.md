@@ -348,7 +348,7 @@ and visualize.
 Try out the AI/ML Smart Device API Code Generation yourself in your own OpenShift 
 cluster: 
 
-- by deploying the [vscode-java ImageStream here](https://github.com/nerc-images/vscode-java/tree/main/cluster-scope/base/image.openshift.io/imagestreams/vscode-java)
+- by deploying the [vscode-java ImageStream here](https://github.com/nerc-images/vscode-java/blob/main/cluster-scope/base/image.openshift.io/imagestreams/vscode-java/imagestream.yaml)
 - Then follow the Jupyter notebooks in this course, starting with 
   [01-install-prerequisites.ipynb](01-install-prerequisites.ipynb). 
 
