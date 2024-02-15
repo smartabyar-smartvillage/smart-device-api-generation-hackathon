@@ -109,6 +109,23 @@ possible.
 configure smart devices for improving traffic light configuration, and running
 on reports on traffic simulations configured at intersections in the world.
 
+### AI/ML Tools and Algorithms
+
+- You can think of Apache Solr as the Model Server in this solution. 
+- You can think of the model as an index of every detail of every Java Class, 
+  Java Constructor, Java Method, and Java Field of every Java Project in the 
+  Smarta Byar Smart Village project, Smart Village Platform, Computate Vertx 
+  project, and Computate Search Project. Having your entire code base indexed 
+  in a search engine allows you to generate code that resolves complicated 
+  imports, links together foreign key relations including many-to-many, 
+  one-to-many, and many-to-one foreign key relations. It also allows you to 
+  rebuild code that registers all APIs automatically as plugins to the main 
+  application. 
+- The model is built with the [computate](https://github.com/computate-org/computate) 
+  project on GitHub. A well established open source project written by myself 
+  over the last 16 years to generate code as you save your code. It's 
+  integrated with Solr search. A new way to write code to make persistence easier.
+
 ## Implementation Steps: Detail the steps you took to implement your solution. Include any challenges faced and how you overcame them.
 
 - Clone the Smarta Byar Smart Village Java code, and it's dependent Java
