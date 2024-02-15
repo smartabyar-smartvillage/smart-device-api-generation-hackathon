@@ -125,6 +125,15 @@ on reports on traffic simulations configured at intersections in the world.
   project on GitHub. A well established open source project written by myself 
   over the last 16 years to generate code as you save your code. It's 
   integrated with Solr search. A new way to write code to make persistence easier.
+- The algorithm will watch any directory for changes recursively. When a Java 
+  class is updated, the code will immediately be parsed with a fork of the 
+  [open source QDox Java code parser library](https://github.com/computate-org/computate/blob/main/src/main/java/com/thoughtworks/qdox/model/impl/DefaultJavaClass.java), 
+  then every detail of the Java Class is indexed in the Solr search engine, 
+  the computate project will then query the indexed data in the search engine, 
+  and generate intuitive asynchronous initialization code, Vert.x reactive APIs, 
+  Handlebars HTML Templates, Java Page rendering code, and more. Imports are 
+  automatically resolved through searching through the deep knowledge base of 
+  dependent code projects in the Solr search engine model server. 
 
 ## Implementation Steps: Detail the steps you took to implement your solution. Include any challenges faced and how you overcame them.
 
