@@ -2,7 +2,7 @@
 
 # Smart Device API Code Generation with AI/ML hackathon
 
-## Written by Christopher Tate
+## Written by [Christopher Tate](https://www.computate.org/)
 
 - Red Hat Principal Software Engineer in Red Hat Research 
 
