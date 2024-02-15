@@ -130,7 +130,7 @@ on reports on traffic simulations configured at intersections in the world.
   class is updated, the code will immediately be parsed with a fork of the 
   [open source QDox Java code parser library](https://github.com/computate-org/computate/blob/main/src/main/java/com/thoughtworks/qdox/model/impl/DefaultJavaClass.java), 
   then every detail of the Java Class is indexed in the Solr search engine, 
-  the computate project will then query the indexed data in the search engine, 
+  the [computate project](https://github.com/computate-org/computate) will then query the indexed data in the search engine, 
   and generate intuitive asynchronous initialization code, Vert.x reactive APIs, 
   Handlebars HTML Templates, Java Page rendering code, and more. Imports are 
   automatically resolved through searching through the deep knowledge base of 
@@ -252,10 +252,10 @@ import, and visualize.
 the terminal output, but it could simplify copy and paste errors by overwriting
 the original source file automatically. I hesitate to do this because it can be
 confusing and frustrating to the user if their hard work is ever overwritten.
-The computate project by default is built to generate code, but also provide an
+The [computate project](https://github.com/computate-org/computate) by default is built to generate code, but also provide an
 empty parent class where you can override any generated method, but never
 overwrite any code written by the developer. Overwriting the original source
-code is against the established workflow of the computate project, but rewriting
+code is against the established workflow of the [computate project](https://github.com/computate-org/computate), but rewriting
 Smart Data Models could be an exception.
 
 - Sometimes the VSCode Maven build integration interferes with running `mvn
