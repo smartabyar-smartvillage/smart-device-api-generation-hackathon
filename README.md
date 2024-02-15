@@ -111,7 +111,8 @@ on reports on traffic simulations configured at intersections in the world.
 
 ### AI/ML Tools and Algorithms
 
-- You can think of Apache Solr as the Model Server in this solution. 
+- You can think of Apache Solr running in the same project as the OpenShift AI 
+  workbench as the Model Server in this solution. 
 - You can think of the model as an index of every detail of every Java Class, 
   Java Constructor, Java Method, and Java Field of every Java Project in the 
   Smarta Byar Smart Village project, Smart Village Platform, Computate Vertx 
