@@ -4,10 +4,15 @@
 
 ## Written by Christopher Tate
 
-- Red Hat Principal Software Engineer in Red Hat Research - Creator of the Smart
-Village Operator and Smart Village Platform - Architect of the Red Hat Social
-Innovation Program - Founder of the Smarta Byar Smart Village Community FIWARE
-Innovation Hub - Principal Software Engineer for the New England Research Cloud
+- Red Hat Principal Software Engineer in Red Hat Research 
+
+- Creator of the Smart Village Operator and Smart Village Platform 
+
+- Architect of the Red Hat Social Innovation Program 
+
+- Founder of the Smarta Byar Smart Village Community FIWARE Innovation Hub 
+
+- Principal Software Engineer for the New England Research Cloud
 
 ## Problem Statement: Describe the specific problem or challenge you aimed to address during the hackathon using AI tools/technologies.
 
