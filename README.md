@@ -342,3 +342,13 @@ entity in the map in dashboard.
 deployment, data import, and data visualization of Smart Data Model data to less
 than 10 minutes, which would normally take months to develop, deploy, import,
 and visualize.
+
+## Try out the AI/ML Smart Device API Code Generation yourself
+
+Try out the AI/ML Smart Device API Code Generation yourself in your own OpenShift 
+cluster: 
+
+- by deploying the [vscode-java ImageStream here](https://github.com/nerc-images/vscode-java/tree/main/cluster-scope/base/image.openshift.io/imagestreams/vscode-java)
+- Then follow the Jupyter notebooks in this course, starting with 
+  [01-install-prerequisites.ipynb](01-install-prerequisites.ipynb). 
+
