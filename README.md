@@ -154,6 +154,16 @@ on reports on traffic simulations configured at intersections in the world.
 
 ## Implementation Steps: Detail the steps you took to implement your solution. Include any challenges faced and how you overcame them.
 
+[![Watch how I installed the prerequisites here on my Youtube playlist](pictures/youtube-install-prerequisites.png)](https://www.youtube.com/watch?v=GYmbNhENakA&list=PLcVjtgfCeLvSxy4H0lc7HX5afbsKAsF8X&index=1)
+
+- Follow the Jupyter notebooks in this course to install the prerequisites [01-install-prerequisites.ipynb](01-install-prerequisites.ipynb). 
+
+[![Watch how I deployed all the microservices here on my Youtube playlist](pictures/youtube-deploy-microservices.png)](https://www.youtube.com/watch?v=V_UM7-4e414&list=PLcVjtgfCeLvSxy4H0lc7HX5afbsKAsF8X&index=2)
+
+- Follow the Jupyter notebooks in this course to deploy all the microservices [02-deploy-microservices.ipynb](02-deploy-microservices.ipynb). 
+
+[![Watch how I loaded the code search model on my Youtube playlist](pictures/youtube-load-code-search-model.png)](https://www.youtube.com/watch?v=thfHkgP_9ZI&list=PLcVjtgfCeLvSxy4H0lc7HX5afbsKAsF8X&index=3)
+
 - Clone the Smarta Byar Smart Village Java code, and it's dependent Java
 projects (smartabyar-smartvillage, smartvillage-platform, computate-vertx,
 computate-search, computate).
@@ -172,6 +182,8 @@ information about them in the Solr search engine.
 - Run the Computate Code Watch Tool provided by the computate platform on the
 smartabyar-smartvillage project in a terminal in the Workbench that will
 generate massive amounts of code for us.
+
+[![Watch how I created a new Java Class and generated code on my Youtube playlist](pictures/youtube-code-generation.png)](https://www.youtube.com/watch?v=GWcMZ-M4Eys&list=PLcVjtgfCeLvSxy4H0lc7HX5afbsKAsF8X&index=4)
 
 - Create a new Java Class representing one of the hundreds of Smart Data Models,
 like PhotovoltaicMeasurement, and note the Smart Data Model search keywords in
@@ -216,9 +228,18 @@ defined in the generated Java class.
 - Run the SQL scripts to update the database schema with all the new generated
 tables and fields.
 
+[![Watch how I ran the generated code in development on my Youtube playlist](pictures/youtube-run-app-in-development.png)](https://www.youtube.com/watch?v=eKu_yfmp0hk&list=PLcVjtgfCeLvSxy4H0lc7HX5afbsKAsF8X&index=5)
+
 - Deploy a new Service, Route, and NetworkPolicy to run the newly built code in
 development directly from the OpenShift AI workbench and view the new dashboard
 for new Smart Data Model immediately at the new Route.
+
+[![Watch how I deployed multiple PhotovoltaicMeasurement smart devices through the FIWARE and Smart Village platforms on my Youtube playlist](pictures/hackathon-on-youtube.png)](https://www.youtube.com/watch?v=jjDSSZGpfGQ&list=PLcVjtgfCeLvSxy4H0lc7HX5afbsKAsF8X&index=6)
+
+- The newly generated Ansible Roles and Playbooks in the Ansible Operator allow
+you to deploy multiple instances of the new Smart Data Model to the message
+broker, IoT Agent, Context Broker, NGSI-LD Smart Village Sync, and Smart Village
+Platform for a complete Edge-to-Cloud event driven solution.
 
 ## Key Features: List the key features of your solution that make it innovative and effective in solving the identified problem.
 
