@@ -18,7 +18,7 @@
 
 Here is the Youtube playlist that was recorded for each step of the Red Hat AI Combinator Hackathon for Quarkus/Vert.X Open API Code Generation in OpenShift AI VSCode container.
 
-[Smart Device API Code Generation with AI/ML hackathon playlist on Youtube](https://www.youtube.com/watch?v=GYmbNhENakA&amp;ab_channel=computate)
+[![Smart Device API Code Generation with AI/ML hackathon playlist on Youtube](pictures/hackathon-on-youtube.png)](https://www.youtube.com/watch?v=GYmbNhENakA&amp;ab_channel=computate)
 
 ## Problem Statement: Describe the specific problem or challenge you aimed to address during the hackathon using AI tools/technologies.
 
