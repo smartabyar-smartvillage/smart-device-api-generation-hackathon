@@ -22,6 +22,8 @@ Here is the Youtube playlist that was recorded for each step of the Red Hat AI C
 
 ## Problem Statement: Describe the specific problem or challenge you aimed to address during the hackathon using AI tools/technologies.
 
+[![Open IoT Data Science Overview](pictures/open-iot-data-science-overview.png)](pictures/open-iot-data-science-overview.png)
+
 Because reactive/asynchronous APIs are more efficient and scalable, but are much
 more complex to build by hand. We can use code generation to build extendable
 APIs consistently, faster, and more secure with AI/ML Code Generation based on
@@ -32,6 +34,8 @@ Easily deploy new edge device models and edge device models following open
 source FIWARE smart data model schemas with AI/ML predictive code generation.
 
 ## Solution Overview: Provide a brief overview of your solution, emphasizing the innovative use of AI tools or technologies.
+
+[![Open IoT Data Science Architecture](pictures/open-iot-data-science-architecture.png)](pictures/open-iot-data-science-architecture.png)
 
 - For any of the hundreds of open source Smart Data Models provided by the
 FIWARE Community, we will use AI/ML code generation technology to build, deploy,
@@ -71,6 +75,8 @@ visualize.
 
 ## Technical Details: Outline the technical aspects of your solution, including the AI tools, algorithms, and technologies employed. Be specific about the key technical components.
 
+[![VSCode IJava java-17-openjdk OpenShift AI Workbench](pictures/openshift-ai-workbench.png)](pictures/openshift-ai-workbench.png)
+
 - Starting from a new OpenShift Cluster and Project, we start a new OpenShift AI
 Workbench using a VSCode image with JupyterHub, IJava, OpenJDK, and Maven
 dependencies installed.
@@ -85,6 +91,8 @@ automated the deployment of the Smart Village Platform with an Ansible Operator.
 applications:
 
 ### Technologies deployed
+
+[![Smart Device API Code Generation with AI/ML Topology](pictures/openshift-ai-code-generation-topology.png)](pictures/openshift-ai-code-generation-topology.png)
 
 - MongoDB: A MongoDB No-SQL Database is required for FIWARE IoT Agents to store
 smart device registration data about each smart device in the project.
@@ -116,6 +124,8 @@ configure smart devices for improving traffic light configuration, and running
 on reports on traffic simulations configured at intersections in the world.
 
 ### AI/ML Tools and Algorithms
+
+[![Apache Solr Code Indexing Model Server with computate](pictures/code-indexing-model-server.png)](pictures/code-indexing-model-server.png)
 
 - You can think of Apache Solr running in the same project as the OpenShift AI 
   workbench as the Model Server in this solution. 
