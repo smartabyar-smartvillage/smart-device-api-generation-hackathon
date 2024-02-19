@@ -280,6 +280,15 @@ Platform for a complete Edge-to-Cloud event driven solution.
 
 ## Results: Share any quantitative or qualitative results achieved by your solution. This could include performance metrics, user feedback, or any other relevant measures of success.
 
+Here are the links to the 21,493 lines of code generated across 3 open source projects using AI/ML by adding the PhotovoltaicMeasurement Smart Data Model to the project: 
+
+- [smartabyar-smartvillage generated code](https://github.com/smartabyar-smartvillage/smartabyar-smartvillage/compare/ai-combinator-hackathon?expand=1)
+- [smartabyar-smartvillage-static generated code](https://github.com/smartabyar-smartvillage/smartabyar-smartvillage-static/compare/ai-combinator-hackathon?expand=1)
+- [smartvillage-operator generated code](https://github.com/smartabyar-smartvillage/smartvillage-operator/compare/ai-combinator-hackathon?expand=1)
+
+Here is a description of our results: 
+
+
 - In 6 minutes and 54 seconds, I tested out building a new Smart Data Model Java
 class from scratch, replaced the Java Class I wrote with the AI/ML suggested
 Java code for the Smart Data Model instead, rebuilt the OpenAPI Spec and other
