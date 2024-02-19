@@ -154,13 +154,19 @@ on reports on traffic simulations configured at intersections in the world.
 
 ## Implementation Steps: Detail the steps you took to implement your solution. Include any challenges faced and how you overcame them.
 
+### Install prerequisites
+
 [![Watch how I installed the prerequisites here on my Youtube playlist](pictures/youtube-install-prerequisites.png)](https://www.youtube.com/watch?v=GYmbNhENakA&list=PLcVjtgfCeLvSxy4H0lc7HX5afbsKAsF8X&index=1)
 
 - Follow the Jupyter notebooks in this course to install the prerequisites [01-install-prerequisites.ipynb](01-install-prerequisites.ipynb). 
 
+### Deploy microservices
+
 [![Watch how I deployed all the microservices here on my Youtube playlist](pictures/youtube-deploy-microservices.png)](https://www.youtube.com/watch?v=V_UM7-4e414&list=PLcVjtgfCeLvSxy4H0lc7HX5afbsKAsF8X&index=2)
 
 - Follow the Jupyter notebooks in this course to deploy all the microservices [02-deploy-microservices.ipynb](02-deploy-microservices.ipynb). 
+
+### Load code search model
 
 [![Watch how I loaded the code search model on my Youtube playlist](pictures/youtube-load-code-search-model.png)](https://www.youtube.com/watch?v=thfHkgP_9ZI&list=PLcVjtgfCeLvSxy4H0lc7HX5afbsKAsF8X&index=3)
 
@@ -182,6 +188,8 @@ information about them in the Solr search engine.
 - Run the Computate Code Watch Tool provided by the computate platform on the
 smartabyar-smartvillage project in a terminal in the Workbench that will
 generate massive amounts of code for us.
+
+### Code generation
 
 [![Watch how I created a new Java Class and generated code on my Youtube playlist](pictures/youtube-code-generation.png)](https://www.youtube.com/watch?v=GWcMZ-M4Eys&list=PLcVjtgfCeLvSxy4H0lc7HX5afbsKAsF8X&index=4)
 
@@ -228,11 +236,15 @@ defined in the generated Java class.
 - Run the SQL scripts to update the database schema with all the new generated
 tables and fields.
 
+### Run application in development
+
 [![Watch how I ran the generated code in development on my Youtube playlist](pictures/youtube-run-app-in-development.png)](https://www.youtube.com/watch?v=eKu_yfmp0hk&list=PLcVjtgfCeLvSxy4H0lc7HX5afbsKAsF8X&index=5)
 
 - Deploy a new Service, Route, and NetworkPolicy to run the newly built code in
 development directly from the OpenShift AI workbench and view the new dashboard
 for new Smart Data Model immediately at the new Route.
+
+### Smart device automation
 
 [![Watch how I deployed multiple PhotovoltaicMeasurement smart devices through the FIWARE and Smart Village platforms on my Youtube playlist](pictures/hackathon-on-youtube.png)](https://www.youtube.com/watch?v=jjDSSZGpfGQ&list=PLcVjtgfCeLvSxy4H0lc7HX5afbsKAsF8X&index=6)
 
