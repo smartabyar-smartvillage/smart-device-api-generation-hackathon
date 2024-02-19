@@ -25,7 +25,7 @@ Here is the Youtube playlist that was recorded for each step of the Red Hat AI C
 [![Open IoT Data Science Overview](pictures/open-iot-data-science-overview.png)](pictures/open-iot-data-science-overview.png)
 
 Because reactive/asynchronous APIs are more efficient and scalable, but are much
-more complex to build by hand. We can use code generation to build extendable
+more complex to build by hand, we can use code generation to build extendable
 APIs consistently, faster, and more secure with AI/ML Code Generation based on
 the well established [computate open source
 project](https://github.com/computate-org/computate). Increase Quarkus API and
