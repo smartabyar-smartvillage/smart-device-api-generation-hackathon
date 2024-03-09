@@ -1,5 +1,5 @@
 (cd ~/smartabyar-smartvillage \
-  && env CONFIG_PATH=$HOME/smartabyar-smartvillage/config/smartabyar-smartvillage.yml \
+  && env CONFIG_PATH=$HOME/smartabyar-smartvillage/config/smartabyar-smartvillage.yaml \
   VERTXWEB_ENVIRONMENT=dev \
   mvn exec:java \
   -DfileResolverCachingEnabled=false \

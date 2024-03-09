@@ -2,12 +2,12 @@
   hosts: localhost
   connection: local
   vars:
-    APPLICATION_PATH: ~/smartabyar-smartvillage/src/main/resources/application.yml
+    APPLICATION_PATH: ~/smartabyar-smartvillage/src/main/resources/application.yaml
     MAIN_VERTICLE_PATH: ~/smartabyar-smartvillage/src/main/java/org/computate/smartvillage/enus/vertx/MainVerticle.java
     SITE_JAVA_PACKAGE: "org.computate.smartvillage.enus"
   tasks:
     - name: Load vars
-      ansible.builtin.include_vars: ~/smartabyar-smartvillage/config/smartabyar-smartvillage.yml
+      ansible.builtin.include_vars: ~/smartabyar-smartvillage/config/smartabyar-smartvillage.yaml
     - name: Load vars
       ansible.builtin.include_vars: "{{ APPLICATION_PATH }}"
     - name: Query Apache Solr for all Java classes
@@ -20,7 +20,7 @@
         JAVA_CLASSES: "{{ JAVA_CLASSES_RESPONSE.json.response.docs }}"
     - name: "Update {{ APPLICATION_PATH }}"
       copy:
-        content: "{{ lookup('template', 'templates/application.yml') | replace('\\{\\{\\{','{{{') | replace('\\{\\{\\>','{{>') | replace('\\{\\{\\#','{{#') | replace('\\{\\%','{%') | replace('\\{\\{','{{') | replace('\\}\\}\\}', '}}}') | replace('\\}\\}', '}}') | replace('\\%\\}', '%}') }}"
+        content: "{{ lookup('template', 'templates/application.yaml') | replace('\\{\\{\\{','{{{') | replace('\\{\\{\\>','{{>') | replace('\\{\\{\\#','{{#') | replace('\\{\\%','{%') | replace('\\{\\{','{{') | replace('\\}\\}\\}', '}}}') | replace('\\}\\}', '}}') | replace('\\%\\}', '%}') }}"
         dest: "{{ APPLICATION_PATH }}"
     - name: "Update {{ MAIN_VERTICLE_PATH }}"
       copy:
